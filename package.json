@@ -1,0 +1,25 @@
+{
+  "name": "express-example",
+  "version": "0.9.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "serve": "NODE_ENV=production node ./bin/www",
+    "serve:background": "NODE_ENV=production BG_MODE=true node ./bin/www &",
+    "serve:debug": "NODE_ENV=development DEBUG=* node ./bin/www",
+    "serve:develop": "gulp",
+    "test": "echo 'no tests yet :('"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^1.0.4"
+  }
+}

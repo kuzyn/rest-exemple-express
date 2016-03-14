@@ -1,0 +1,21 @@
+extends ./_layout
+
+block content
+  
+  .container
+      form(id="request" method="" url="/")
+        input(id="postVar" type="text" placeholder="postVar" autocomplete="off")
+        select(id="verb")
+          option(value="POST") POST
+          option(value="GET") GET
+          option(value="PUT") PUT
+          option(value="PATCH") PATCH
+          option(value="DELETE") DELETE
+        button(id="send") send
+  
+  .containter
+    .response      
+      
+  footer
+    script(defer rel='script/text' src='https://code.jquery.com/jquery-2.1.4.min.js')
+    script(defer rel='script/text' src='js/front-client.js')
