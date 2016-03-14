@@ -10,6 +10,7 @@ var router = express.Router();
 // where we send our GET to localhost:port/client
 router.get('/', function(req, res) {
   debug('GET');
+
   var payload = '<div><p>Your language is: ' + req.acceptsLanguages() + '</p><p>You sent a: ' + req.method + '</p></div>';
 
   res.format({
@@ -29,10 +30,14 @@ router.get('/', function(req, res) {
 // where we send our POST to localhost:port/
 router.post('/', function(req, res) {
   debug('POST');
+
+  var payload = '<div><p>Your language is: ' + req.acceptsLanguages() + '</p><p>You sent a: ' + req.method + '</p></div>';
+
   if (isEmptyObject(req.body)) {
     res.status(501).send('<div><p>No postVar passed!</p></div>');
   }
-  res.status(200).send('<div><p>Your POST variable value: ' + req.body.postVar + '</p></div>');
+  payload += '<div><p>Your POST variable value: ' + req.body.postVar + '</p></div>';
+  res.status(200).send(payload);
 });
 
 // any other unmatched verbs to localhost:port/
