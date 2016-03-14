@@ -1,9 +1,9 @@
 ## Description
 ### :penguin: :penguin: :penguin:
 
-### Express example
+### Express REST example
 
-RESTful API example with (Expressjs)[]
+RESTful API example with [Express](http://expressjs.com/)  
 
 ## Deploy
 
@@ -22,17 +22,28 @@ Here are the default routes:
 Route | Type | Return | Payload | Description
 --- | --- | --- | --- | ---
 */*       | **[GET]**     | Object  | n/a | Returns an object with a responseText holding HTML markup
-*/*       |  **[POST]**   | Object  | {postVar: *string*} | Returns an object with a responseText holding HTML markup (if postVar = null it returns an error)
+*/*       |  **[POST]**   | Object  | {postVar: *string*} | Returns an object with a responseText holding HTML markup (returns an error if postVar = null)
 */*       | **[ALL OTHER VERBS]**       | Object  | n/a | Returns an error object with a responseText holding HTML markup
 
+### Result examples
 Return object structure on success:
 ```js
-{readyState: 4, responseText: "<div><p>Your language is: en-US,en,fr-CA,fr</p><p>You sent a: GET</p></div>", status: 200, statusText: "OK"}
+{
+ readyState: 4, 
+ responseText: "<div><p>Your language is: en-US,en,fr-CA,fr</p><p>You sent a: GET</p></div>", 
+ status: 200, 
+ statusText: "OK"
+}
 ```  
 
 Return object structure on error:
 ```js
-{readyState: 4, responseText: "<div><p>No postVar passed!</p></div>", status: 501, statusText: "Not Implemented"}
+{
+ readyState: 4, 
+ responseText: "<div><p>No postVar passed!</p></div>", 
+ status: 501, 
+ statusText: "Not Implemented"
+}
 ```
 
 ## License
